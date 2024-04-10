@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Spinnaker&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Spinnaker&display=swap');
+
+
+body{
+    font-family: "Raleway", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Spinnaker", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.active {
+  color: #2c7a64;
+}
+
+.banner{
+  background-image: url(/src/Assets/Images/Banner.png);
+}
+
+input[type='text']:focus~.input-text{
+  @apply text-[#2c7a64] bg-white transform -translate-y-7 -translate-x-4 scale-75;
+}
+input[type='text']:valid+.input-text{
+  @apply text-[#2c7a64] bg-white  transform -translate-y-7 -translate-x-4 scale-75;
+}
+textarea:focus~.input-text{
+  @apply text-[#2c7a64] bg-white  transform -translate-y-9 -translate-x-4 scale-75;
+}
+textarea:valid+.input-text{
+  @apply text-[#2c7a64] bg-white transform -translate-y-9 -translate-x-4 scale-75;
 }
